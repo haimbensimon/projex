@@ -1,0 +1,63 @@
+
+
+<div class="container  bo trsh">
+  <div class="row ">
+    <div class="col-md-12" style="margin-top: 10%;">
+      <div class="float-right">
+       <a  routerLink="new" mat-raised-button  class="P-5 trshb"><img
+        src="../../../assets//svg/family-icon-2316421.svg"
+        alt="triangle with all three sides equal"
+        height="40"
+        width="40" />
+
+         הוסף מטופל</a>
+
+      </div>
+    </div>
+    <div class="col-md-12 ">
+
+      <input #searchTerm type="text" class="form-control text-right trs text-white" (input)="onInputTerm()" placeholder="חפש לפי שם פרטי">
+
+    </div>
+
+  </div>
+ <app-spinner *ngIf="showSpinner"></app-spinner>
+ 
+
+<div class="table-responsive">
+  <table class="table table-striped text-white">
+     <thead>
+       <tr>
+         <th>פעולה</th>
+         <th class="text-right" *ngFor="let h of headerKeys">{{h}}</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let c of customersArrFiltered$ |async">
+         <td>
+          <a (click)="onDeleteCustomer(c)" type="button" >
+            <img
+ src="../../../assets//svg/garbage-40357.svg"
+ alt="triangle with all three sides equal"
+ height="40"
+ width="40" />
+          </a>
+          <a  routerLink="/patient/{{c.id}}/edit" type="button" class="ml-2">
+
+            <img
+ src="../../../assets//svg/survey-2316468.svg"
+ alt="triangle with all three sides equal"
+ height="40"
+ width="40" />
+          </a>
+         </td>
+         <td class="text-right">{{c.phone}}</td>
+         <td class="text-right">{{c.email}}</td>
+         <td class="text-right">{{c.lastName}}</td>
+         <td class="text-right"><a routerLink="/patient/{{c.id}}/view">{{c.firstName}}</a></td>
+       </tr>
+     </tbody>
+  </table>
+</div>
+</div>
+

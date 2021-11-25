@@ -1,0 +1,125 @@
+
+
+       <div class="container  bo1 " >
+        <div>
+          <!-- <div class="col-md-6 " style="margin-top: 20%;">
+            <div class="float-right">
+             <a [hidden]="!mrole" (click)="onAddOoil()" routerLink="new" mat-raised-button color="primary"><mat-icon>spa</mat-icon> הוסף שמן</a>
+
+            </div>
+          </div> -->
+          <!-- <div class="col-md-6 ">
+
+            <input #searchTerm type="text" style="margin-top: 15%;" class="form-control text-right " (input)="onInputTerm()" placeholder="חפש לפי שם ">
+
+          </div> -->
+          <app-spinner *ngIf="showSpinner"></app-spinner>
+
+
+
+          <div class="mat-elevation-z8 data-table table-striped text-white " style="margin-top: 15%;">
+          <a [hidden]="!mrole" class="btn text-white" (click)="onAddOoil()" style="margin-top: 10%;margin-right: auto;margin-left: auto;">
+            <img
+               src="../../../assets//svg/button-153680.svg"
+               alt="triangle with all three sides equal"
+               height="57"
+               width="60" />
+            הוסף שמן</a>
+
+            <!-- <mat-form-field appearance="standard">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+            </mat-form-field> -->
+            <table mat-table [dataSource]="dataSource.data" class="data-table" matSort aria-label="Elements">
+              <!-- Id Column -->
+              <!-- class="full-width-table" -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-white h3">שם לועזי</th>
+                <td mat-cell *matCellDef="let row" class="text-white h5 ttx">{{row.EnName}}</td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-white h3">שם</th>
+                <td mat-cell *matCellDef="let row">
+                  <a routerLink="/oils/{{row.id}}/view" class="text-white h5">{{row.HeName}}</a>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th [hidden]="!mrole" mat-header-cell *matHeaderCellDef mat-sort-header>פעולה</th>
+                <td [hidden]="!mrole" mat-cell *matCellDef="let row">
+                  <a (click)="onDeleteOil(row)" type="button" >
+                    <img
+ src="../../../assets//svg/garbage-40357.svg"
+ alt="triangle with all three sides equal"
+ height="40"
+ width="40" />
+                  </a>
+                  <a  routerLink="/oils/{{row.id}}/edit" type="button" class="ml-2">
+                    <img
+ src="../../../assets//svg/survey-2316468.svg"
+ alt="triangle with all three sides equal"
+ height="40"
+ width="40" />
+                  </a>
+
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator #paginator
+                [length]="dataSource?.data?.length"
+                [pageIndex]="0"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 20]"
+                aria-label="Select page" class="pgn">
+            </mat-paginator>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+      <!-- <div class="table-responsive">
+        <table class="table table-striped table-dark">
+           <thead>
+             <tr>
+               <th [hidden]="!mrole">פעולה</th>
+               <th class="text-right" *ngFor="let h of headers">{{h}}</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let c of oilsArrFiltered$ |async">
+               <td [hidden]="!mrole">
+                <button (click)="onDeleteOil(c)" type="button" mat-raised-button color="warn">
+                  <mat-icon>delete_sweep</mat-icon>
+                </button>
+                <a  routerLink="/oils/{{c.id}}/edit" type="button" mat-raised-button color="primary" class="ml-2">
+                  <mat-icon>create</mat-icon>
+                </a>
+               </td>
+
+
+               <td class="text-right"><a routerLink="/oils/{{c.id}}/view">{{c.HeName}}</a></td>
+               <td class="text-right">{{c.EnName}}</td>
+
+             </tr>
+           </tbody>
+        </table>
+      </div> -->
+      </div>
+
+

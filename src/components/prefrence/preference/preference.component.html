@@ -1,0 +1,88 @@
+<div class=" mt-5 bo">
+  <h3 *ngIf="!mrole" class="mt-4">Regular User does not have permmision to edit</h3>
+  <!-- <h3 *ngIf="mrole" class="mt-4">Admin User can edit</h3> -->
+
+  <!-- <button style="margin-top: 5%;" [disabled]="!mrole" class="btn btn-success pl-2 pr-2 bb ml-2" routerLink="/preferences/positive">השפעות חיוביות</button>
+<button style="margin-top: 5%;" [disabled]="!mrole" class="btn btn-danger ml-2 pl-2 pr-2 bb" routerLink="/preferences/negative">סימפטומים</button> -->
+<!-- <button [disabled]="!mrole" routerLink="/preferences/head" type="button" mat-raised-button color="primary" style="margin-left: 10px;margin-top: 5%;">
+  תסמיני ראש
+</button>
+<button [disabled]="!mrole" routerLink="/preferences/neck" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני צואר
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/arms" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני ידים
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/body" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני גוף
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/legs" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני רגליים
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/back" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני גב
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/global" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמינים כללי
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/sexsual" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני אברי רביה
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/spirit" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני רגש
+ </button>
+ <button [disabled]="!mrole" routerLink="/preferences/internal" type="button" mat-raised-button color="primary" style="margin-left: 10px;">
+   תסמיני אברים פנימים
+ </button>
+ <button  class="btn btn-success pl-2 pr-2 bb ml-2" routerLink="/preferences/prices">עלות טיפולים</button> -->
+<hr>
+<button id="bmm" mat-flat-button [matMenuTriggerFor]="appMenu"  class="mat-menu1 text-white">תפריט</button>
+<mat-menu #appMenu="matMenu" >
+  <button mat-menu-item [matMenuTriggerFor]="subMenu" >תסימנים לדיקור</button>
+  <button mat-menu-item [matMenuTriggerFor]="sub2Menu" >תסימנים לשמנים</button>
+  <button mat-menu-item routerLink="/preferences/prices" >הגדרת עלויות </button>
+</mat-menu>
+
+
+
+<mat-menu #subMenu="matMenu" class="mat-menu1">
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/head" >תסמיני ראש</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/neck" >תסמיני צואר</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/arms" > תסמיני ידים </button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/body" > תסמיני גוף</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/legs" >תסמיני רגליים</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/back" > תסמיני גב</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/global" >תסמינים כללי</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/sexsual" > תסמיני אברי רביה</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/spirit" > תסמיני רגש</button>
+  <button mat-menu-item [disabled]="!mrole" routerLink="/preferences/internal" > תסמיני אברים פנימים</button>
+</mat-menu>
+
+<mat-menu #sub2Menu="matMenu" >
+  <button mat-menu-item [disabled]="!mrole"
+  routerLink="/preferences/positive" >השפעות חיוביות </button>
+  <button mat-menu-item [disabled]="!mrole"
+  routerLink="/preferences/negative" >סימפטומים</button>
+
+</mat-menu>
+
+<router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

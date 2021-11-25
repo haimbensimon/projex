@@ -1,0 +1,45 @@
+<form [formGroup]="armsForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-3 ml-5">
+      <h3 class="h3 text-center text-success">הוסף  סימפטום אברים פנימים
+
+      </h3>
+      <hr>
+      <input type="text" formControlName="negativeSign" class="form-control text-right in" placeholder="הוסף ">
+      <button  class="btn  ml-5 mt-3 float-right" name="submit" type="submit" value="הוסף ">
+        <img
+        src="../../../assets//svg/icon-6104157.svg"
+        alt="triangle with all three sides equal"
+        height="87"
+        width="100" />
+        </button>
+    </div>
+    <div class="col-md-6">
+      <input #searchTerm type="text" class="form-control text-right in" placeholder="חפש לפי שם">
+      <hr>
+      <table class="table table-bordered">
+        <tr>
+          <th class="text-center  text-black" style="background-color: rgba(80, 255, 226, 0.507);">סימפטום אברים פנימים</th>
+          <th class="text-center"></th>
+        </tr>
+        <tr *ngFor="let p of armsArrFiltered$ |async">
+          <td class="text-center">{{p.negativeSign}}</td>
+          <td class="text-center">
+            <a (click)="onDelteArms(p)" type="button" class="btn ">
+              <img
+ src="../../../assets//svg/garbage-40357.svg"
+ alt="triangle with all three sides equal"
+ height="40"
+ width="40" />
+            </a>
+          </td>
+        </tr>
+    </table>
+
+    </div>
+
+
+  </div>
+
+  </form>
+

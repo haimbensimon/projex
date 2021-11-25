@@ -1,0 +1,18 @@
+label{
+  color: white;
+}
+input{
+  background-color: rgba(0, 0, 0, 0.685);
+}
+
+input:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea{
+  background-color: rgba(0, 0, 0, 0.685);
+}
+textarea:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}

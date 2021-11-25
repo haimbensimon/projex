@@ -1,0 +1,30 @@
+
+
+  .mat-menu{
+    background-color: rgba(60, 255, 0, 0.192);
+    font-size: 20px;
+font-weight: bold;
+padding: 10px 25px 10px 25px;
+
+    }
+
+    .mat-menu-item {
+
+      font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px 10px 25px;
+    }
+
+.mat-flat-button{
+  background-color: rgba(137, 43, 226, 0.294);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px 10px 25px;
+  border-radius: 40%;
+  
+}
+
+.mat-menu1{
+  margin-top:2%;
+
+}

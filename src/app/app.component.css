@@ -1,0 +1,56 @@
+body{
+  background-color: rgb(32, 25, 133);
+
+background-image:url('../assets/blue-1634110.png');
+background-repeat:repeat;
+background-size:cover;
+background-position:center;
+font-family: 'Bona Nova', serif;
+font-size: 20px;
+}
+.trs{
+  background-color: transparent;
+}
+.trsh{
+  background-color: rgba(0, 0, 0, 0.657);
+}
+.trshb{
+  background-color: rgba(0, 0, 0, 0.657);
+  color: white;
+}
+mat-sidenav-container{
+  height: 100%;
+ z-index: 1;
+ position: relative;
+
+
+}
+mat-sidenav , matsidenav-content{
+  padding: 16px;
+}
+mat-sidenav{
+  background-color: rgba(0, 0, 255, 0.507);
+  width: 200px;
+}
+.b1{
+position:fixed;
+top:80px;
+}
+.in{
+  background-color: rgba(0, 0, 0, 0.274);
+}
+input{
+  background-color: rgba(0, 0, 0, 0.685);
+}
+
+input:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea{
+  background-color: rgba(0, 0, 0, 0.685);
+}
+textarea:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}

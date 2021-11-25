@@ -1,0 +1,41 @@
+<div class="contaner-fluid mt-5 bo">
+  <div class="row">
+    <div class="col-md-6" style="margin-top: 15%;">
+      <!-- <input type="text" class="form-control" placeholder="Search Customer By Phone" [(ngModel)]="term"
+        (input)="onInputTerm()"> -->
+      <input #searchTerm type="text" class="form-control text-right" placeholder="חפש לפי שם פרטי">
+
+    </div>
+
+  </div>
+
+  <div class="table-responsive trsh">
+    <table class="table table-striped text-white">
+       <thead>
+         <tr>
+
+           <th>טלפון</th>
+           <th>דואר אלקטרוני</th>
+           <th>שם משפחה</th>
+           <th>שם</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let c of customersArrFiltered$ |async">
+
+           <td class="text-right">{{c.phone}}</td>
+           <td class="text-right">{{c.email}}</td>
+           <td class="text-right">{{c.lastName}}</td>
+           <td class="text-right"><a routerLink="/medical/{{c.id}}/new"> {{c.firstName}}</a></td>
+         </tr>
+       </tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+
+
+
+

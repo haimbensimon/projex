@@ -1,0 +1,68 @@
+.exred {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.exgreen {
+  background: rgba(0, 255, 0, 0.5);
+}
+.ex3 {
+  background: rgba(89, 0, 255, 0.5);
+}
+
+.ex4 {
+  background: rgba(229, 255, 0, 0.5);
+}
+.ex5 {
+  background: rgba(0, 47, 255, 0.5);
+}
+
+.ex6 {
+  background: rgba(255, 196, 0, 0.5);
+}
+.ex7 {
+  background: rgba(255, 115, 0, 0.5);
+}
+
+.ex8 {
+  background: rgba(255, 0, 234, 0.5);
+}
+.ex9 {
+  background: rgba(251, 116, 161, 0.5);
+}
+
+.ex10 {
+  background: rgba(0, 255, 213, 0.5);
+}
+input{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+
+input:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+mat-form-field{
+  background-color: rgba(0, 0, 0, 0.76);
+  color: white;
+}
+mat-label{
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+mat-select{
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+mat-option{
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0);
+}

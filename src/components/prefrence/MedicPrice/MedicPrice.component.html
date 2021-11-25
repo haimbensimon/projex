@@ -1,0 +1,40 @@
+<div class="container">
+
+<form action="">
+<div class="row mt-4">
+
+  <div class="col-md-6 ">
+    <input name="oilp" type="number" class="form-control in" [(ngModel)]="oilp" placeholder="מחיר לטיפול שמנים">
+  </div>
+  <div class="col-md-2">
+  <label class="text-right text-white" for="oilp">: מחיר לטיפול שמנים</label>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <input name="pointp" type="number" class="form-control in" [(ngModel)]="pointp" placeholder="מחיר לטיפול דיקור">
+  </div>
+  <div class="col-md-2">
+  <label class="text-right text-white" for="pointp">: מחיר לטיפול דיקור</label>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <input type="number" name="doublep" class="form-control in" [(ngModel)]="doublep" placeholder="מחיר לטיפול משולב">
+  </div>
+  <div class="col-md-2">
+  <label class="text-right text-white" for="doublep">: מחיר לטיפול משולב</label>
+  </div>
+</div>
+
+
+
+</form>
+
+<button  type="button" class="btn btn-primary mt-4"  (click)="onPrice()">קבע ערכים</button>
+<button  type="button" class="btn btn-primary mt-4 ml-3"  (click)="onUpdate()">הצג ערכים</button>
+</div>
+
+

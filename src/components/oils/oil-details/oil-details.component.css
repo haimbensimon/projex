@@ -1,0 +1,41 @@
+.bo {
+  border: 1px solid black;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cen {
+  margin-left: auto;
+  margin-right: auto;
+}
+.tit {
+  text-shadow: 2px 2px 4px #000000;
+}
+.bs {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (max-width: 600px) {
+  div.fs {
+    font-size: 20px;
+  }
+  h1.fst{
+    font-size: 20px;
+    margin-top: 5vh;
+  }
+}
+@media screen and (min-width: 601px) {
+  div.fs {
+    font-size: 50px;
+  }
+  h1.fst{
+    font-size: 60px;
+    margin-top: 1vh;
+  }
+}
+.des{
+  background-color: rgba(0, 0, 117, 0.472);
+}

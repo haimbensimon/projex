@@ -1,0 +1,183 @@
+<div class="container-fluid mt-5 bo">
+  <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()">
+        <!-- first row -->
+        <div class="row text-primary">
+          <div class="col-md-12 mb-3">
+
+            <h4 class="text-center"><span style="font-size: 13px;"></span>{{initMdc.lastName}} {{initMdc.firstName}}</h4>
+          </div>
+
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12  p-2 text-center">
+           <input class="btn brd ml-3 text-white" style="width: 50%;font-size: 20px;background: rgba(5, 138, 5, 0.5); " name="submit" type="submit" value="צור טיפול ושמור">
+         </div>
+         </div>
+        <h3>{{initMdc.theDate}}</h3>
+
+        <div class="row">
+          <div class="col-md-5" >
+            <mat-form-field appearance="fill" >
+              <mat-label>ראש ופנים</mat-label>
+              <mat-select formControlName="head" multiple >
+                <mat-option *ngFor="let topping of headList" [value]="topping.negativeSign" class="exred">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>צוואר וגרון</mat-label>
+              <mat-select formControlName="neck" multiple>
+                <mat-option *ngFor="let topping of neckList$ " [value]="topping.negativeSign" class="exgreen">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>ידים וכתפיים</mat-label>
+              <mat-select formControlName="arms" multiple>
+                <mat-option *ngFor="let topping of armsList$ " [value]="topping.negativeSign" class="ex3">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>מרכז גוף - חזה בטן</mat-label>
+              <mat-select formControlName="body" multiple>
+                <mat-option *ngFor="let topping of bodyList$ " [value]="topping.negativeSign" class="ex4">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>אברי רביה</mat-label>
+              <mat-select formControlName="sexs" multiple>
+                <mat-option *ngFor="let topping of sexsualList$ " [value]="topping.negativeSign" class="ex5">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-md-5" >
+            <mat-form-field appearance="fill" >
+              <mat-label>רגליים וכפות רגליים</mat-label>
+              <mat-select formControlName="legs" multiple >
+                <mat-option *ngFor="let topping of legsList$" [value]="topping.negativeSign" class="ex6">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>אברים פנימיים</mat-label>
+              <mat-select formControlName="intr" multiple>
+                <mat-option *ngFor="let topping of internalList$" [value]="topping.negativeSign" class="ex7">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>גב</mat-label>
+              <mat-select formControlName="back" multiple>
+                <mat-option *ngFor="let topping of backList$" [value]="topping.negativeSign" class="ex8">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-5">
+            <mat-form-field appearance="fill">
+              <mat-label>מחלות ובעיות כלליות</mat-label>
+              <mat-select formControlName="glbl" multiple>
+                <mat-option *ngFor="let topping of glob" [value]="topping.negativeSign" class="ex9">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-5">
+            <mat-form-field appearance="fill">
+              <mat-label>רגשי</mat-label>
+              <mat-select formControlName="sprt" multiple>
+                <mat-option *ngFor="let topping of spiritList$" [value]="topping.negativeSign" class="ex10">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <button type="button" (click)="addProblem()" class="btn btn-outline-info text-white brd"><i class="fa fa-plus"></i>  הוסף תלונה לטיפול בשמן</button>
+
+        <div formArrayName="painList">
+
+          <div class="row text-primary" formGroupName='{{i}}' *ngFor="let item of painList; let i=index">
+            <div class="col-md-8 mb-3">
+              <!-- <select  required  name="takeCare" class="custom-select text-right" id="inputGroupSelect" formControlName="takeCare">
+                <option *ngFor="let locl of Negative$ |async" value="{{locl.negativeSign}}">{{locl.negativeSign}}</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <select  required name="goodFor" class="custom-select text-right" id="inputGroupSelect" formControlName="goodFor">
+
+                <option *ngFor="let locl of Positive$ |async" value="{{locl.positiveSign}}">{{locl.positiveSign}}</option>
+              </select> -->
+
+
+
+
+              <mat-form-field appearance="fill">
+                <mat-label>לחזק</mat-label>
+                <mat-select formControlName="goodFor"
+                            panelClass="example-panel-green">
+                  <mat-option *ngFor="let topping of Positive$ " [value]="topping.positiveSign">{{topping.positiveSign}}</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>סימפטומים</mat-label>
+                <mat-select formControlName="takeCare"
+                            panelClass="example-panel-red">
+                  <mat-option *ngFor="let topping of Negative$ " [value]="topping.negativeSign">{{topping.negativeSign}}</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+               <div class="col-12  p-3 text-center">
+                <button  routerLink="/medical" class="btn btn-danger">בטל</button>
+                <!-- <input class="btn btn-primary ml-3" name="submit" type="submit" value="שמור"> -->
+              </div>
+        </div>
+
+
+  </form>
+
+</div>
+<!-- <div class="row">
+  <div class="col-12 text-center">
+    <button style="width: 600px;font-size: 20px;" class="btn btn-success brd" (click)=onMedic()>צור טיפול</button>
+  </div>
+</div> -->
+
+

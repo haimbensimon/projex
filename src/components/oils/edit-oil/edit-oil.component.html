@@ -1,0 +1,100 @@
+<div class="container bo">
+  <div class="row">
+    <div class="col-12">
+
+      <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()">
+        <div class="row text-white">
+
+               <div class="col-md-6 mb-3">
+            <label for="HeName" style="float:right;">שם</label>
+            <input formControlName="HeName" class="form-control text-right" [ngClass]="{
+                'is-invalid': formGroup.get('HeName')?.errors && formGroup.get('HeName')?.dirty
+              }" required minlength="2" name="HeName" id="HeName" type="text">
+
+
+               </div>
+               <div class="col-md-6 mb-3">
+            <label for="EnName" style="float:right;">שם לועזי</label>
+
+            <input formControlName="EnName" class="form-control text-right" [ngClass]="{
+                'is-invalid': formGroup.get('EnName')?.errors && formGroup.get('EnName')?.dirty
+              }" id="EnName" type="text" name="EnName">
+
+               </div>
+
+       </div>
+        <div class="row text-white">
+          <div class="col-md-6 mb-3">
+            <label for="description" style="float:right;">תאור</label>
+            <textarea cols="10" rows="10" formControlName="description" class="form-control text-right" name="description" id="description" type="text"></textarea>
+
+          </div>
+              <div class="col-md-6 mb-3">
+                <label for="warning" style="float:right;">אזהרות</label>
+                <textarea cols="10" rows="10"formControlName="warning" class="form-control text-right"  id="phone" type="text" name="warning"></textarea>
+              </div>
+      </div>
+        <div class="row text-white">
+        <div class="col-md-4 mb-3">
+              <label for="food" style="float:right;"> שימוש באוכל</label>
+              <textarea formControlName="food" class="form-control text-right" id="food" type="text" name="food"></textarea>
+
+      </div>
+            <div class="col-md-4 mb-3">
+              <label for="external" style="float:right;">שימוש חיצוני</label>
+              <textarea formControlName="external" class="form-control text-right" id="external" type="text" name="external"></textarea>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="aroma" style="float:right;">שימוש ארומטרפי</label>
+              <textarea formControlName="aroma" class="form-control text-right" id="aroma" type="text" name="aroma"></textarea>
+            </div>
+
+          </div>
+
+           <div class="row text-white ">
+              <div class="col-4" >
+                <mat-form-field appearance="fill" >
+                  <mat-label>סימפטומים</mat-label>
+                  <mat-select formControlName="takeCare" multiple >
+                    <mat-option *ngFor="let topping of Negative$ |async" [value]="topping.negativeSign" class="exred">{{topping.negativeSign}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>לחזק</mat-label>
+                  <mat-select formControlName="goodFor" multiple>
+                    <mat-option *ngFor="let topping of Positive$ |async" [value]="topping.positiveSign" class="exgreen">{{topping.positiveSign}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+
+
+
+
+
+              <!-- ////////////////////////////////////////  //////////////////////////////////////////-->
+
+
+                 </div>
+                </div>
+
+            <div class="row text-white">
+              <div class="col-4">
+                <label for="imgUrl" style="float:right;">תמונה</label>
+            <input formControlName="imgUrl" class="form-control" name="imgUrl" id="imgUrl" type="text">
+              </div>
+            </div>
+
+
+
+          <div class=" p-3 text-center">
+            <a routerLink="/oils" mat-raised-button color="primary">בטל</a>
+
+            <input [disabled]="formGroup.invalid" class="btn btn-primary ml-3" name="submit" type="submit" value="עדכן">
+          </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+

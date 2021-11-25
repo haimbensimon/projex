@@ -1,0 +1,35 @@
+.active {
+  font-size: 1.1em;
+  color: rgb(0, 0, 0);
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 20px 0 20px 0;
+}
+#myB {
+  transform: rotateZ(4deg);
+}
+.exp {
+  background: rgba(184, 251, 206, 0.623);
+}
+nav{
+  font-family: 'Bona Nova', serif;
+}
+
+mat-sidenav-container{
+  height: 120px;
+background-color: white;
+position: relative;
+
+
+}
+mat-sidenav , matsidenav-content{
+  padding: 36px;
+  background-color: white;
+
+}
+mat-sidenav{
+  background-color: rgba(255, 253, 253, 0.507);
+  width: 200px;
+  height: 220px;
+}
+

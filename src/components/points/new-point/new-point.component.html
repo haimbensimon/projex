@@ -1,0 +1,206 @@
+<div class="container-fluid mt-5 bo ">
+
+  <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()">
+    <div class="row text-primary fl">
+      <div class="col-md-4 mt-5">
+        <label for="mainMrd" style="float:right;">מרידאן מרכזי</label>
+        <input formControlName="mainMrd" class="form-control" name="mainMrd" id="mainMrd" type="text">
+      </div>
+
+      <div class="col-md-4 mb-3 mt-5">
+        <label for="Name" style="float:right;">שם לועזי </label>
+
+        <input formControlName="Name" class="form-control text-right" [ngClass]="{
+            'is-invalid': formGroup.get('Name')?.errors && formGroup.get('Name')?.dirty
+          }" id="Name" type="text" name="Name">
+
+
+      </div>
+
+
+
+      <div class="col-md-4 mb-3 mt-5">
+        <label for="point" style="float:right;">נקודה</label>
+        <input formControlName="point" class="form-control text-right" [ngClass]="{
+            'is-invalid': formGroup.get('point')?.errors && formGroup.get('point')?.dirty
+          }" required minlength="2" name="point" id="point" type="text">
+
+
+      </div>
+
+      <div class="col-md-4">
+        <label for="location" style="float:right;">מיקום</label>
+        <input formControlName="location" class="form-control" name="location" id="location" type="text">
+      </div>
+
+      <div class="col-md-4">
+        <label for="secMrd" style="float:right;">מרידאן מישני</label>>
+        <input formControlName="secMrd" class="form-control" name="secMrd" id="secMrd" type="text">
+      </div>
+
+
+    </div>
+    <hr>
+    <hr>
+    <div class="row text-primary fl" >
+      <div class="col-md-4 ">
+        <label for="mirror1" style="float:right;">שיטה 1</label>
+        <input formControlName="mirror1" class="form-control" name="mirror1" id="mirror1" type="text">
+      </div>
+      <div class="col-md-4">
+        <label for="mirror2" style="float:right;">שיטה 2</label>
+        <input formControlName="mirror2" class="form-control" name="mirror2" id="mirror2" type="text">
+      </div>
+      <div class="col-md-4">
+        <label for="mirror3" style="float:right;">שיטה 3</label>
+        <input formControlName="mirror3" class="form-control" name="mirror3" id="mirror3" type="text">
+      </div>
+
+
+
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-4">
+        <label for="mirror4" style="float:right;">שיטה 4</label>
+        <input formControlName="mirror4" class="form-control" name="mirror4" id="mirror4" type="text">
+      </div>
+
+      <div class="col-md-4">
+        <label for="mirror5" style="float:right;">שיטה 5</label>
+        <input formControlName="mirror5" class="form-control" name="mirror5" id="mirror5" type="text">
+      </div>
+    </div>
+
+
+    <hr>
+<hr>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="imgUrl" style="float:right;">מיקום תמונה</label>
+        <input formControlName="imgUrl" class="form-control" name="imgUrl" id="imgUrl" type="text">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="description" style="float:right;">תאור</label>
+        <textarea cols="10" rows="5" formControlName="description" class="form-control text-right"  id="description" type="text" name="description"></textarea>
+
+   </div>
+    </div>
+    <hr>
+    <hr>
+       <div class="row ">
+
+          <div class="col-md-6" >
+            <mat-form-field appearance="fill" >
+              <mat-label>ראש ופנים</mat-label>
+              <mat-select formControlName="headList" multiple >
+                <mat-option *ngFor="let topping of headList$" [value]="topping.negativeSign" class="exred">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>צוואר וגרון</mat-label>
+              <mat-select formControlName="neckList" multiple>
+                <mat-option *ngFor="let topping of neckList$" [value]="topping.negativeSign" class="exgreen">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>ידיים וכתפיים</mat-label>
+              <mat-select formControlName="armsList" multiple>
+                <mat-option *ngFor="let topping of armsList$" [value]="topping.negativeSign" class="ex3">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>מרכז גוף -חזה בטן</mat-label>
+              <mat-select formControlName="bodyList" multiple>
+                <mat-option *ngFor="let topping of bodyList$" [value]="topping.negativeSign" class="ex4">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>אבריי רביה</mat-label>
+              <mat-select formControlName="sexsualList" multiple>
+                <mat-option *ngFor="let topping of sexsualList$" [value]="topping.negativeSign" class="ex5">{{topping.negativeSign}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+<hr>
+<hr>
+          <!-- ////////////////////////////////////////  //////////////////////////////////////////-->
+
+          <div class="row">
+
+            <div class="col-md-6" >
+              <mat-form-field appearance="fill" >
+                <mat-label>רגליים וכפות רגליים</mat-label>
+                <mat-select formControlName="legsList" multiple >
+                  <mat-option *ngFor="let topping of legsList$" [value]="topping.negativeSign" class="ex6">{{topping.negativeSign}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>אפרים פנימים</mat-label>
+                <mat-select formControlName="internalList" multiple>
+                  <mat-option *ngFor="let topping of internalList$ " [value]="topping.negativeSign" class="ex7">{{topping.negativeSign}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>בעיות גב</mat-label>
+                <mat-select formControlName="backList" multiple>
+                  <mat-option *ngFor="let topping of backList$ " [value]="topping.negativeSign" class="ex8">{{topping.negativeSign}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>מחלות ובעיות כלליות</mat-label>
+                <mat-select formControlName="globalList" multiple>
+                  <mat-option *ngFor="let topping of globalList$" [value]="topping.negativeSign" class="ex9">{{topping.negativeSign}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>בעיות ריגשיות</mat-label>
+                <mat-select formControlName="spiritList" multiple>
+                  <mat-option *ngFor="let topping of spiritList$ " [value]="topping.negativeSign" class="ex10">{{topping.negativeSign}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <!-- ////////////////////////////////////////  //////////////////////////////////////////-->
+          <hr>
+          <hr>
+
+      <div class=" p-3 text-center mt-5">
+        <a routerLink="/oils" mat-raised-button color="primary">בטל</a>
+
+        <input [disabled]="formGroup.invalid" class="btn btn-primary ml-3" name="submit" type="submit" value="שמור">
+      </div>
+  </form>
+
+
+</div>
+

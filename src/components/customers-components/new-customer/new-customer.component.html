@@ -1,0 +1,116 @@
+<form [formGroup]="formGroup" (ngSubmit)="ngSubmit()" >
+  <!-- first row -->
+  <div class="row text-black" style="margin-top: 10%;">
+    <div class="col-2"></div>
+    <div class="col-md-4 mb-3" >
+
+      <label for="firstName" style="float:right;margin-top: 15%;">שם פרטי</label>
+      <input formControlName="firstName" class="form-control text-right" [ngClass]="{
+          'is-invalid': formGroup.get('firstName')?.errors && formGroup.get('firstName')?.dirty
+        }" required minlength="2" name="firstName" id="firstName" type="text">
+        <div [hidden]="!formGroup.get(['firstName'])?.dirty || !formGroup.get(['firstName'])?.errors">שדה חובה - מינימום 2 אותיות</div>
+      <!-- <div [hidden]="!formGroup.get('firstName')?.errors?.required" class="invalid-feedback">First Name is required
+      </div> -->
+
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="lastName" style="float:right;margin-top: 15%;"><span class="text-danger">*</span>שם משפחה</label>
+
+      <input formControlName="lastName" class="form-control text-right" [ngClass]="{
+          'is-invalid': formGroup.get('lastName')?.errors && formGroup.get('lastName')?.dirty
+        }" id="lastName" type="text">
+      <div [hidden]="!formGroup.get('lastName')?.dirty" class="invalid-feedback">שדה חובה
+      </div>
+      <div [hidden]="!formGroup.get('lastName')?.errors" class="invalid-feedback">מינימום 2 אותיות
+      </div>
+    </div>
+
+  </div>
+   <!-- second row -->
+  <div class="row">
+    <div class="col-2"></div>
+           <div class="col-md-4 mb-3">
+            <label for="email" style="float:right;"><span class="text-danger">*</span>דוא"ל</label>
+            <input formControlName="email" class="form-control text-right" [ngClass]="{
+              'is-invalid': formGroup.get('email')?.errors && formGroup.get('email')?.dirty
+               }" required email name="email" id="email" type="email">
+            <!-- <div [hidden]="!formGroup.get('email')?.errors?.required" class="invalid-feedback">email is required</div>
+            <div [hidden]="!formGroup.get('email')?.errors?.email" class="invalid-feedback">email is not email</div> -->
+           </div>
+           <div class="col-md-4 mb-3">
+             <label for="phone" style="float:right;"><span class="text-danger">*</span>פלאפון</label>
+             <input formControlName="phone" class="form-control text-right" [ngClass]="{
+              'is-invalid': formGroup.get('phone')?.errors && formGroup.get('phone')?.dirty
+               }" id="phone" type="tel">
+            <div [hidden]="!formGroup.get('phone')?.errors" class="invalid-feedback">שדה חובה</div>
+            <div [hidden]="!formGroup.get('phone')?.dirty" class="invalid-feedback">חייב להכניס מספר תקין</div>
+         </div>
+
+  </div>
+  <!-- <button type="button" (click)="addHobbie()" class="btn btn-outline-info text-black cen"><i class="fa fa-plus"></i>הוסף טיפול</button> -->
+
+  <div formArrayName="medical">
+   <!-- thied row -->
+    <div class="row text-primary" formGroupName='{{i}}' *ngFor="let item of medicalArr; let i=index">
+      <div class="col-2"></div>
+      <div class="col-md-4 mb-3">
+        <label for="name" style="float:right;"><span class="text-danger">*</span>טיפול</label>
+        <input formControlName="name" class="form-control text-right" id="name" type="text">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="description" style="float:right;"><span class="text-danger">*</span>זיהוי טיפול</label>
+        <input formControlName="description" class="form-control text-right" id="description" type="text">
+      </div>
+      <div class="col-md-1 mb-3">
+        <button (click)="deleteHobbie(i)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+      </div>
+    </div>
+  </div>
+
+   <!-- four row -->
+  <div class="row">
+    <div class="col-md-10 mb-3"><label for="customerAddress" style="float:right;">כתובת</label>
+      <!-- <input formControlName="address" id="customerAddress" name="address" type="text" class="form-control"> -->
+    </div>
+  </div>
+
+
+
+        <!-- fifth row -->
+         <div class="row">
+          <div class="col-2"></div>
+          <div class="input-group mb-3 col-4">
+            <input type="text" class="form-control text-right" placeholder="רחוב" formControlName="street" id="street" name="street">
+
+          </div>
+
+
+         <div class="input-group mb-3 col-4">
+          <input type="text" class="form-control text-right" placeholder="עיר" formControlName="city" id="city" name="city">
+        </div>
+
+         </div>
+
+   <!-- six row -->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-md-8 mb-3">
+      <label for="customerNotes" style="float:right;">הערות</label>
+      <textarea formControlName="notes" id="customerNotes" cols="30" rows="10" name="notes" type="text"
+        class="form-control text-right"></textarea>
+    </div>
+  </div>
+
+  <!-- seven row -->
+  <div class="row">
+<div class="col-12  p-3 text-center">
+<button  routerLink="/patient" mat-raised-button>בטל</button>
+<!-- <button mat-raised-button color="primary" (click)="onClear()" class="ml-3">נקה טופס</button> -->
+<input [disabled]="formGroup.invalid" class="btn btn-primary ml-3" name="submit" type="submit" value="שמור">
+</div>
+  </div>
+
+
+</form>
+
+

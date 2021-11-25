@@ -1,0 +1,33 @@
+input{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+
+input:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+textarea:focus-within{
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
+mat-form-field{
+  background-color: rgba(0, 0, 0, 0.349);
+  color: white;
+}
+mat-label{
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+mat-select{
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+mat-option{
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0);
+}

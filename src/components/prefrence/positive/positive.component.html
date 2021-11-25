@@ -1,0 +1,45 @@
+<form [formGroup]="positiveForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-3 ml-4">
+
+
+      <h3 class="h3 text-center text-success ">הוסף השפעה חיובית</h3>
+      <hr>
+      <input type="text" formControlName="positiveSign" class="form-control text-right in" placeholder="הוסף השפעה">
+      <button  class="btn  ml-5 mt-3 float-right" name="submit" type="submit" value="הוסף השפעה">
+        <img
+        src="../../../assets//svg/icon-6104157.svg"
+        alt="triangle with all three sides equal"
+        height="87"
+        width="100" />
+        </button>
+     
+    </div>
+    <div class="col-md-6">
+      <input #searchTerm type="text" class="form-control text-right in" placeholder="חפש לפי שם">
+      <hr>
+      <table class="table table-bordered">
+        <tr>
+          <th class="text-center bgh-success text-white">השפעה חיובית</th>
+          <th class="text-center"></th>
+        </tr>
+        <tr *ngFor="let p of positiveArrFiltered$ |async">
+          <td class="text-center">{{p.positiveSign}}</td>
+          <td class="text-center">
+            <a (click)="onDeltePos(p)" type="button" class="btn ">
+              <img
+              src="../../../assets//svg/garbage-40357.svg"
+              alt="triangle with all three sides equal"
+              height="40"
+              width="40" />
+            </a>
+          </td>
+        </tr>
+    </table>
+
+    </div>
+
+  </div>
+
+  </form>
+

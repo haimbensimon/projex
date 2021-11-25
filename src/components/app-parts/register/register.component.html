@@ -1,0 +1,60 @@
+<div class="container-fluid">
+
+  <div class="text-center mb-5  brd">
+    <i class="fab fa-airbnb ml-4 mr-3 " style="font-size: 120px;margin-top:
+    11px;"></i>
+    <h1>cupanture</h1>
+  </div>
+
+
+
+  <div class="bo p-5" >
+    <i class="fab fa-airbnb ml-3 mr-2 mr-2" style="font-size: 40px;"></i>
+  <form #logForm="ngForm" (ngSubmit)="onSubmit(logForm)">
+    <h1 class="h1 text-center">Register</h1>
+    <hr>
+
+    <div class="row mt-5">
+      <div class="col-3">
+        <label for="email">Email:</label>
+      </div>
+      <div class="col-8">
+        <input type="email" [(ngModel)]="email" class="form-control ml-4" name="email" email required>
+
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-3">
+        <label for="password">Password:</label>
+      </div>
+      <div class="col-8">
+        <input type="password" [(ngModel)]="password" class="form-control ml-4" name="password" required>
+
+      </div>
+    </div>
+
+  <div class="row mt-5">
+
+    <div class="col-md-12">
+      <input [disabled]="!logForm.valid" type="submit" name="submit" class="form-control btn btn-primary" value="Register">
+
+    </div>
+
+  </div>
+<div class="row m-2 p-2">
+  <div class="col-md-12">
+    <div class="bb ">
+      <button id="bb" class="btn btn-success bb" routerLink="/home">Back to Login</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  </form>
+  </div>
+  </div>
+

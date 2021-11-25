@@ -1,0 +1,146 @@
+
+<!--
+        this.Med.arms = m.arms
+        this.Med.back = m.back
+        this.Med.body = m.body
+        this.Med.glbl = m.glbl
+        this.Med.goodList = m.goodList
+        this.Med.head = m.head
+        this.Med.intr = m.intr
+        this.Med.legs = m.legs
+        this.Med.neck = m.neck
+        this.Med.oilArr = m.oilArr
+        this.Med.painList = m.painList
+        this.Med.painPointList = m.painPointList
+        this.Med.pointsFA = m.pointsFA
+        this.Med.sexs = m.sexs
+        this.Med.sprt = m.sprt
+        this.Med.theDate = m.theDate
+        this.Med.totalPrice = m.totalPrice -->
+<div class=" mt-5 bo " >
+  <div class="row">
+    <div class="col-12 text-center text-white">
+      <h3>{{Med.lastName}} - {{Med.firstName}}</h3>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center text-white bg-success" style="font-size: 30px;">
+פרטי טיפול
+    </div>
+  </div>
+  <hr>
+
+
+  <div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 text-center p-3">
+      <h5 class="h5 text-right text-white">{{Med.theDate}} :תאריך</h5>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 text-center p-3">
+      <h5 class="h5 text-right text-white">{{Med.totalPrice}} :מחיר</h5>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 text-center text-white bl border p-2"><h3>תלונות לטיפול בשמנים</h3>
+      <div class="text-right " *ngFor="let opl of Med.painList">
+        <h4>{{opl['goodFor']}}</h4>
+        <h4>{{opl['takeCare']}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 text-center text-white rd border p-2"><h3>תלונות לטיפול בדיקור</h3>
+      <h4 class="text-right" *ngFor="let opl of Med.painPointList">{{opl['simptoms']}} </h4>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 text-center text-white gr border p-2"><h3>נקודות לטיפול בדיקור</h3>
+      <div class="text-right">
+
+
+
+
+
+
+        <div class="table-responsive">
+
+        <table class="table table-striped table-dark" style="width:100%; margin-top: 10pt;">
+
+
+          <thead>
+            <tr  >
+              <th></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let p of Med.pointsFA;let i=index">
+            <tr>
+              <td class="text-center"><a routerLink="/points/{{p['pointID']}}/view"><h3>{{p['point']}}</h3></a>
+                 - [{{i}}] -
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+
+        <table class="table table-striped table-info" style="width:100%; margin-top: 10pt;">
+
+
+          <thead>
+            <tr  >
+              <th></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let p of Med.oilArr;let i=index">
+            <tr>
+              <td class="text-center">p<h3>{{p['oil']}}</h3>
+                 - [{{i}}] -
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <table style="width:100%; margin-top: 10pt;">
+    <tr>
+      <th>Percent:</th>
+      <td class="right" *ngFor="let i of items">
+        {{i.percent}} %
+      </td>
+    </tr>
+    <tr>
+      <th>Value:</th>
+      <td class="right" *ngFor="let i of items">
+        {{i.value}}
+      </td>
+    </tr>
+  </table> -->
+
+
+  <hr>
+
+
+  <!-- <div class="row bg-light">
+    <div class="col-12 text-center"><img src="{{initObj.imgUrl}}" alt="{{initObj.EnName}}}" width="100px"></div>
+  </div> -->
+
+</div>

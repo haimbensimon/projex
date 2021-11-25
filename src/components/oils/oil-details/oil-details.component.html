@@ -1,0 +1,68 @@
+<div class="container mt-5 ">
+  <div class="row" >
+    <div class="col-12 text-center text-white">
+      <h2 class="" style="margin-top: 15%;">{{initObj.EnName}} - {{initObj.HeName}}</h2>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div  class="col-6 text-right text-white bg-danger tit bs fs">
+סימפטומים
+    </div>
+    <div class="col-6 text-center text-white bg-success tit bs fs" >
+מחזק
+    </div>
+  </div>
+  <hr>
+  <div class="row text-center">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <h5 *ngFor="let item of initObj.takeCare" class="text-right text-white">{{item}}</h5>
+    </div>
+    <div class="col-4">
+      <h5 *ngFor="let item of initObj.goodFor" class="text-right text-white" >{{item}}</h5>
+    </div>
+  </div>
+<hr>
+
+  <div class="row ">
+
+    <div class="col-md-12 text-center p-3 des">
+      <h5 class="h5 text-right text-white border p-3 bs">{{initObj.description}}</h5>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row ">
+
+    <div class="col-md-12 text-center p-3 des">
+      <h5 class="h5 text-right text-white">{{initObj.warning}}</h5>
+    <hr>
+    </div>
+  </div>
+
+  <div class="row des">
+
+    <div class="col-md-12 text-center text-white border p-2 bs des"><h4 class="text-right">{{initObj.aroma}}</h4></div>
+  </div>
+  <div class="row ">
+
+    <div class="col-md-12 text-center text-white  border p-2 bs des"><h4 class="text-right">{{initObj.external}}</h4></div>
+  </div>
+    <div class="row ">
+
+    <div class="col-md-12 text-center text-white  border p-2 bs des"><h4 class="text-right">{{initObj.food}}</h4></div>
+  </div>
+
+
+
+
+  <hr>
+
+
+  <div class="row">
+    <div class="col-12 text-center" ><img src="{{initObj.imgUrl}}" alt="{{initObj.EnName}}}" width="100px opacity:0.7"></div>
+  </div>
+
+</div>
