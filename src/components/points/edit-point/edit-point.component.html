@@ -1,9 +1,9 @@
 <div class="container mt-5 bo">
 
   <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()">
-    <div class="row text-primary">
+    <div class="row text-white ">
 
-      <div class="col-md-4 mb-3 mt-5">
+      <div class="col-md-4 mb-3 mt-5 text-white">
         <label for="Name" style="float:right;">שם לועזי </label>
 
         <input formControlName="Name" class="form-control text-right" [ngClass]="{
@@ -34,14 +34,14 @@
     <hr>
     <hr>
        <div class="row">
-          <div class="col-md-4"></div>
-            <div class="col-md-4">
+          <div class="col-md-4 text-white"></div>
+            <div class="col-md-4 text-white">
               <label for="location" style="float:right;">מיקום</label>
               <textarea cols="10" rows="5" formControlName="location" class="form-control text-right" name="location" id="location" type="text"></textarea>
             </div>
           <div class="col-md-4"></div>
        </div>
-    <div class="row text-primary">
+    <div class="row text-white">
       <div class="col-md-2">
       </div>
       <div class="col-md-4">
@@ -56,11 +56,11 @@
         <label for="mirror3" style="float:right;">שיטה3</label>
         <input formControlName="mirror3" class="form-control text-right" name="mirror3" id="mirror3" type="text">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-white">
         <label for="mirror4" style="float:right;">שיטה4</label>
         <input formControlName="mirror4" class="form-control text-right" name="mirror4" id="mirror4" type="text">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-white">
         <label for="mirror5" style="float:right;">שיטה5</label>
         <input formControlName="mirror5" class="form-control text-right" name="mirror5" id="mirror5" type="text">
       </div>
@@ -70,11 +70,11 @@
     <hr>
 <hr>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 text-white">
         <label for="imgUrl" style="float:right;">מיקום תמונה</label>
         <input formControlName="imgUrl" class="form-control" name="imgUrl" id="imgUrl" type="text">
       </div>
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 mb-3 text-white">
         <label for="description" style="float:right;">תאור</label>
         <textarea cols="10" rows="5" formControlName="description" class="form-control text-right"  id="description" type="text" name="description"></textarea>
 

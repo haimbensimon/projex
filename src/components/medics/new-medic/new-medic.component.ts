@@ -672,6 +672,7 @@ export class NewMedicComponent implements OnInit {
 
     this.filterlist.forEach((w) => {
       this.Oils.forEach((oil) => {
+        if(oil.takeCare != null){
         for (let i = 0; i < oil.takeCare.length; i++) {
           if (oil.takeCare[i] == w) {
             console.log('find : ' + oil.EnName);
@@ -682,11 +683,13 @@ export class NewMedicComponent implements OnInit {
             }
           }
         }
+      }
       });
     });
 
     this.filterlist.forEach((w) => {
       this.Oils.forEach((oil) => {
+        if(oil.goodFor != null){
         for (let i = 0; i < oil.goodFor.length; i++) {
           if (oil.goodFor[i] == w) {
             console.log('find : ' + oil.EnName);
@@ -697,6 +700,7 @@ export class NewMedicComponent implements OnInit {
             }
           }
         }
+      }
       });
     });
 
